@@ -1,4 +1,4 @@
-//SPDX-License-Identifier: Unlicense
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -11,7 +11,7 @@ contract RealEstate is ERC721URIStorage {
 
     constructor() ERC721("Real Estate", "REAL") {}
 
-    function mint(string memory tokenURI) public returns (uint256) {
+    function mint(string memory tokenURI) public returns(uint256) {
         _tokenIds.increment();
 
         uint256 newItemId = _tokenIds.current();
@@ -21,7 +21,8 @@ contract RealEstate is ERC721URIStorage {
         return newItemId;
     }
 
-    function totalSupply() public view returns (uint256) {
+    function totalSupply() public view return(uint256) {
         return _tokenIds.current();
     }
+
 }
